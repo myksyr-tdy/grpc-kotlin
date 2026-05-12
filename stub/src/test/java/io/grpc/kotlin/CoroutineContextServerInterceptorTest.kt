@@ -134,7 +134,7 @@ class CoroutineContextServerInterceptorTest : AbstractCallsTest() {
     runBlocking {
       val thrown = assertThrows<StatusException> { client.sayHello(helloRequest("")) }
 
-      assertThat(thrown.trailers.get(aMetadataKey)).isEqualTo("A value")
+      assertThat(thrown.trailers?.get(aMetadataKey)).isEqualTo("A value")
     }
   }
 }
